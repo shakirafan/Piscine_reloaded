@@ -1,16 +1,24 @@
+
 NAME = ft_display_file
-SRC = functions.c
-OBJ = functions.o
+
+CC = gcc
+
+SRC = ft_display_file.c
+
+OBJ = ft_display_file.o
+
+FLAGS = -Wextra -Werror -Wall
 
 all: $(NAME)
 
 $(NAME):
-		gcc -Wall -Werror -Wextra -c $(SRC)
+		gcc -c -Wall -Werror -Wextra $(SRC)
+		gcc -o $(NAME) $(OBJ)
 
 clean:
-		rm -f $(OBJ)
+		/bin/rm -f $(OBJ)
 
 fclean: clean
-		rm -f $(NAME)
+		/bin/rm -f $(NAME)
 
-re:		fclean all
+re: fclean all
